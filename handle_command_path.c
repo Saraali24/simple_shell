@@ -14,7 +14,7 @@ int len_command = 0, len_token = 0;
 path_value = my_getenv("PATH");
 path_copy = my_strdup(path_value);
 line_copy = my_strdup(lineptr);
-line_copy = my_strtok(line_copy, _DELIMITER);
+my_strtok(line_copy, _DELIMITER);
 if ((access(line_copy, F_OK) == 0) && ((line_copy[0] == '/') ||
 (line_copy[1] == '/') || (line_copy[2] == '/')))
 {
