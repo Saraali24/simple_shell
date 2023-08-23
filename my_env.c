@@ -8,14 +8,12 @@
 
 void my_env(void)
 {
-char **env = environ;
-int l;
+int i, j;
 
-while ((*env))
+for (i = 0; environ[i] != NULL; i++)
 {
-l = (int)strlen(*env);
-write(1, *env, l);
+for (j = 0; environ[i][j] != '\0'; j++)
+write(1, &environ[i][j], 1);
 write(1, "\n", 1);
-env++;
 }
 }
